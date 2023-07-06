@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { styled } from "styled-components";
+import ModalWindow from "./modal/ModalWindow";
+import MiniModalWindow from "./modal/MiniModalWindow";
 
 const ModalComponents = styled.div`
     display: flex;
@@ -28,16 +31,33 @@ const LargeOpenModalButton = styled.button`
 `
 
 const Modal = () => {
+    const [openModal, setOpenModal] = useState(false);
+    const [openMiniModal, setOpenMiniModal] = useState(false);
+
+    const openModalHandler = () => {
+        setOpenModal(!openModal);
+    }
+
+    const openMiniModalHandler = () => {
+        setOpenMiniModal(!openMiniModal);
+    }
+
     return (
         <div>
             <h1>Modal</h1>
             <ModalComponents>
                 <div>
-                    <OpenModalButton>Open Modal</OpenModalButton>
+                    <OpenModalButton onClick={openModalHandler}>Open Modal</OpenModalButton>
                 </div>
+                {
+                    setOpenModal ? openModal && <ModalWindow openModalHandler={openModalHandler} /> : null
+                }
                 <div>
-                    <LargeOpenModalButton>Open Modal</LargeOpenModalButton>
+                    <LargeOpenModalButton onClick={openMiniModalHandler}>Open Modal</LargeOpenModalButton>
                 </div>
+                {
+                    setOpenMiniModal ? openMiniModal && <MiniModalWindow openMiniModalHandler={openMiniModalHandler} /> : null
+                }
             </ModalComponents>
         </div>
     )
