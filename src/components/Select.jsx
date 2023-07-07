@@ -4,7 +4,7 @@ const SelectLayout = styled.div`
     border: 3px solid rgb(221, 221, 221);
     height: 200px;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
     margin-top: 50px;
 `
 
