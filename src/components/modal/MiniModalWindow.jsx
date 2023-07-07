@@ -38,8 +38,8 @@ const CloseButton = styled.button`
 
 const MiniModalWindow = ({openMiniModalHandler}) => {
     return (
-        <div onClick={openMiniModalHandler}>
-            <ModalDiv></ModalDiv>
+        <div>
+            <ModalDiv onClick={openMiniModalHandler}></ModalDiv>
             <ModalComponents>
                 <div>닫기 버튼 1개가 있고,<br />외부 영역을 누르면 모달이 닫혀요.</div>
                 <ButtonSet>
