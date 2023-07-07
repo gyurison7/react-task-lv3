@@ -28,10 +28,12 @@ const Select = () => {
                 <h1>Select </h1>
                 <SelectComponents>
                     <div>
-                        <SelectButton></SelectButton>
-                    </div>
-                    <div>
-                        <SelectButton></SelectButton>
+                        <SelectButton>
+                            <option>리액트</option>
+                            <option>자바</option>
+                            <option>스프링</option>
+                            <option>리액트네이티브</option>
+                        </SelectButton>
                     </div>
                 </SelectComponents>
             </SelectLayout>
